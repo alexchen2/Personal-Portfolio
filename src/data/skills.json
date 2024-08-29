@@ -2,71 +2,71 @@
     "technologies": [
         {
             "name": "Python",
-            "imgPath": "../skills/python.png"
+            "imgPath": "../img/skills/python.png"
         },
         {
             "name": "Javascript",
-            "imgPath": "../skills/js.png"
+            "imgPath": "../img/skills/js.png"
         },
         {
             "name": "HTML5",
-            "imgPath": "../skills/html.png"
+            "imgPath": "../img/skills/html.png"
         },
         {
             "name": "CSS3",
-            "imgPath": "../skills/css.png"
+            "imgPath": "../img/skills/css.png"
         },
         {
             "name": "Node.js",
-            "imgPath": "../skills/nodejs.png"
+            "imgPath": "../img/skills/nodejs.png"
         },
         {
             "name": "C",
-            "imgPath": "../skills/c.png"
+            "imgPath": "../img/skills/c.png"
         },
         {
             "name": "Java",
-            "imgPath": "../skills/java.png"
+            "imgPath": "../img/skills/java.png"
         },
         {
             "name": "Haskell",
-            "imgPath": "../skills/haskell.png"
+            "imgPath": "../img/skills/haskell.png"
         }
     ],
     "otherTools": [
         {
             "name": "Git",
-            "imgPath": "../skills/git.png"
+            "imgPath": "../img/skills/git.png"
         },
         {
             "name": "Figma",
-            "imgPath": "../skills/figma.png"
+            "imgPath": "../img/skills/figma.png"
         },
         {
             "name": "Docker",
-            "imgPath": "../skills/docker.png"
+            "imgPath": "../img/skills/docker.png"
         },
         {
             "name": "Github",
-            "imgPath": "../skills/github.png"
+            "imgPath": "../img/skills/github.png"
         }
     ],
     "libFrameworks": [
         {
             "name": "Flask",
-            "imgPath": "../skills/flask.png"
+            "imgPath": "../img/skills/flask.png"
         },
         {
             "name": "Express.js",
-            "imgPath": "../skills/expressjs.png"
+            "imgPath": "../img/skills/expressjs.png"
         },
         {
             "name": "React.js",
-            "imgPath": "../skills/react.png"
+            "imgPath": "../img/skills/react.png"
         },
         {
             "name": "SQLAlchemy",
-            "imgPath": "../skills/sqlalchemy.png"
+            "imgPath": "../img/skills/sqlalchemy.png"
         }
     ]
 }
