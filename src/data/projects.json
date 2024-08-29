@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Gamified Learning Platform",
+        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "tags": [
+            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Docker", "Figma"
+        ],
+        "githubRepo": "https://github.com/alexchen2/Gamified-Learning-Platform",
+        "demoLink": null,
+        "previewImgPath": null
+    },
+    {
+        "name": "My Personal Website - this page!",
+        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "tags": [
+            "HTML", "CSS", "Javascript", "React.js", "Node.js", "Bootstrap", "React Spring", "Figma"
+        ],
+        "githubRepo": "https://github.com/alexchen2/Gamified-Learning-Platform",
+        "demoLink": null,
+        "previewImgPath": null
+    },
+    {
+        "name": "Bus Buddy: Route Optimizer",
+        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "tags": [
+            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Jinja", "Figma"
+        ],
+        "githubRepo": "https://github.com/alexchen2/BusBuddy-Route-Optimizer",
+        "demoLink": null,
+        "previewImgPath": null
+    },
+    {
+        "name": "ChordGuru - Chord Recombinator",
+        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "tags": [
+            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Docker"
+        ],
+        "githubRepo": "https://github.com/alexchen2/Chord-Recombinator-Web",
+        "demoLink": "https://chordguru.glitch.me",
+        "previewImgPath": null
+    }
+]

@@ -1,0 +1,17 @@
+.skill-icon {
+    cursor: pointer;
+    max-height: 93px;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.4s cubic-bezier(.07,.71,.58,.94);
+}
+
+.skill-icon img {
+    max-width: 93px;
+    height: 100%;
+    width: auto;
+}
+
+.skill-icon:hover {
+    transform: scale(1.05);
+}

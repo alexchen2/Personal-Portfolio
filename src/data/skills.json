@@ -1,0 +1,72 @@
+{
+    "technologies": [
+        {
+            "name": "Python",
+            "imgPath": "../skills/python.png"
+        },
+        {
+            "name": "Javascript",
+            "imgPath": "../skills/js.png"
+        },
+        {
+            "name": "HTML5",
+            "imgPath": "../skills/html.png"
+        },
+        {
+            "name": "CSS3",
+            "imgPath": "../skills/css.png"
+        },
+        {
+            "name": "Node.js",
+            "imgPath": "../skills/nodejs.png"
+        },
+        {
+            "name": "C",
+            "imgPath": "../skills/c.png"
+        },
+        {
+            "name": "Java",
+            "imgPath": "../skills/java.png"
+        },
+        {
+            "name": "Haskell",
+            "imgPath": "../skills/haskell.png"
+        }
+    ],
+    "otherTools": [
+        {
+            "name": "Git",
+            "imgPath": "../skills/git.png"
+        },
+        {
+            "name": "Figma",
+            "imgPath": "../skills/figma.png"
+        },
+        {
+            "name": "Docker",
+            "imgPath": "../skills/docker.png"
+        },
+        {
+            "name": "Github",
+            "imgPath": "../skills/github.png"
+        }
+    ],
+    "libFrameworks": [
+        {
+            "name": "Flask",
+            "imgPath": "../skills/flask.png"
+        },
+        {
+            "name": "Express.js",
+            "imgPath": "../skills/expressjs.png"
+        },
+        {
+            "name": "React.js",
+            "imgPath": "../skills/react.png"
+        },
+        {
+            "name": "SQLAlchemy",
+            "imgPath": "../skills/sqlalchemy.png"
+        }
+    ]
+}

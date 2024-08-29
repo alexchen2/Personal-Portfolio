@@ -1,0 +1,46 @@
+:root {
+    --projects-heading-font: normal 400 40px/54px var(--heading-font-family);
+    --projects-vert-padding: 100px;
+}
+
+#projects-background {
+    width: 100%;
+    min-height: 1500px; /*2718px*/
+    height: fit-content;
+    pointer-events: all;
+    background: #202020;
+}
+
+#projects-wrapper {
+    padding-top: var(--projects-vert-padding);
+    padding-bottom: var(--projects-vert-padding);
+    height: auto;
+}
+
+#projects-heading {
+    position: relative;
+    font: var(--projects-heading-font);
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+}
+
+#projects-heading::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -20.5px;
+    border-top: 3px solid var(--line-color);
+    width: 143.5px;
+}
+
+/**
+ * ========
+ * ProjectCapsule Styling
+ * ========
+**/
+

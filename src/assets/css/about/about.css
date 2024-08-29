@@ -1,0 +1,140 @@
+
+:root {
+    --about-mheading-font: normal 400 50px/63px var(--heading-font-family);
+    --about-sheading-font: normal 500 26px/30px var(--body-font-family);
+    --about-body-font: normal 300 21px/30px var(--body-font-family);
+}
+
+#about-background {
+    position: relative;
+    width: 100%;
+    min-height: 762px;
+    height: auto;
+    background: #000000;
+    margin-top: -20px;
+    pointer-events: all;
+}
+
+#about-wrapper {
+    padding-top: 100px;
+}
+
+#about-text {
+    color: var(--text-color);
+}
+
+#about-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* padding-bottom: 59px; */
+}
+
+#about-heading::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -29px;
+    border-top: 3px solid var(--line-color);
+    width: 143.5px;
+}
+
+#about-mheading {
+    font: var(--about-mheading-font);
+}
+
+#about-sheading {
+    font: var(--about-sheading-font);
+    max-width: 500px;
+    width: auto;
+}
+
+#about-body {
+    margin-top: 59px;
+    font: var(--about-body-font);
+}
+
+/* AboutImage Styling */
+#about-image {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#about-image-panel {
+    position: relative;
+    max-width: 325px;
+    width: 100%;
+    height: auto;
+    /* left: 910px;
+    top: 1136px; */
+    outline: 3px solid #2DA33F;
+    z-index: 3;
+    transition: all 0.4s cubic-bezier(.07,.71,.58,.94);
+}
+
+#about-image-panel img {
+    width: 100%;
+    height: auto;
+}
+
+#about-image-panel::before, 
+#about-image-panel::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    outline: 3px solid #e8e8e8;
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(.07,.71,.58,.94);
+}
+
+#about-image-panel::after {
+    outline: 3px solid #ffffff;
+}
+
+#about-image-panel:hover,
+#about-image-panel:focus {
+    transform: translate(-12px, -12px);
+}
+
+#about-image-panel:hover::after,
+#about-image-panel:focus::after {
+    left: 12px;
+    top: 12px;
+}
+
+#about-image-panel:hover::before,
+#about-image-panel:focus::before {
+    left: 24px;
+    top: 24px;
+}
+
+@media screen and (max-width: 992px) {
+    #about-image {
+        transform: scale(0.85);
+        margin-top: -20px;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #about-image {
+        margin-top: -60px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #about-image {
+        transform: scale(0.75);
+        margin-top: -160px;
+        margin-bottom: 50px;
+    }
+}

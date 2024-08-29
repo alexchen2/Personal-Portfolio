@@ -1,0 +1,277 @@
+:root {
+    --intro-mheading-font: normal 400 50px/65px var(--heading-font-family);
+    --intro-sheading-font: normal 400 32px/38px var(--heading-font-family);
+    --intro-learn-font: normal 200 18px/30px var(--body-font-family);
+    --heading-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/**
+ * ========
+ * Styling for Intro.js (Parallax effect)
+ * ========
+**/
+
+#parallax-sky,
+#parallax-mountain1,
+#parallax-temple,
+#parallax-mountain2 {
+    pointer-events: none;
+}
+
+#img-sky {
+    position: relative;
+    background: url("../../vendor/img/intro/taipei_maokong_4.png");
+    width: 101%;
+    height: 100%;
+    left: 0px;
+    top: -5px;
+    background-position: center top; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    filter: brightness(90%);
+}
+
+#img-mountain2 {
+    position: relative;
+    background: url("../../vendor/img/intro/taipei_maokong_3.png");
+    width: 100%; /* 1600px; */
+    height: 100%; /* 1066px; */
+    left: -30px;
+    top: 0;
+    background-position: center top; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    filter: brightness(90%);
+    padding-bottom: 66.63%;
+}
+
+#img-temple {
+    position: relative;
+    background: url("../../vendor/img/intro/taipei_maokong_2.png");
+    width: 100%;  /* 1501px */
+    height: 100%; /* 999px; */
+    left: 10px;
+    top: 0px;
+    background-position: center top; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    filter: brightness(90%);
+    padding-bottom: 66.56%;
+}
+
+#img-mountain1 {
+    position: relative;
+    background: url("../../vendor/img/intro/taipei_maokong_1A.png");
+    width: 105%; /* 1548px */
+    height: 100%; /* 1031px */
+    left: -40px;
+    top: 10px;
+    background-position: center top; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    filter: brightness(90%);
+    padding-bottom: 66.6%;
+    overflow: visible;
+}
+
+/* "Learn More" button */
+#parallax-mountain1 {
+    position: relative;
+}
+
+#learn-more {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    left: 0; 
+    right: 0; 
+    bottom: 30px;
+
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto; 
+    margin-right: auto; 
+
+    background: none;
+    outline: none;
+    border: none;
+
+    pointer-events: all;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+#learn-text {
+    font: var(--intro-learn-font);
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.25s ease-in-out;
+    pointer-events: all;
+}
+
+#learn-arrow {
+    width: 75px;
+    height: 75px;
+    margin-top: -20px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: all;
+}
+
+#learn-more:hover {
+    transform: scale(1.04);
+}
+
+#learn-more:hover #learn-text {
+    color: rgba(255, 255, 255, 1);
+}
+
+#learn-more:hover #learn-arrow {
+    filter: brightness(2);
+}
+
+/**
+ * ========
+ * Styling for IntroHeading.js (Text and buttons)
+ * ========
+**/
+
+#intro-text {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    max-width: 1072px;
+    width: auto;
+}
+
+.intro-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.intro-mheading {
+    font: var(--intro-mheading-font);
+    color: var(--text-color);
+    text-shadow: var(--heading-shadow);
+}
+
+.intro-sheading {
+    font: var(--intro-sheading-font);
+    color: var(--text-color);
+    text-shadow: var(--heading-shadow);
+}
+
+.intro-heading::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -23px;
+    border-top: 3px solid var(--line-color);
+    width: 141px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.socials-row {
+    display: flex;
+    gap: 22.5px;
+    margin-top: 55px;
+}
+
+.intro-resume-btn {
+    margin-top: 23px;
+    width: fit-content;
+}
+
+@media screen and (max-width: 1350px) {  
+    #img-mountain1 {
+        top: 5px;
+    }  
+    
+    #intro-text {
+        transform: scale(0.9);
+        margin-top: calc(25vw - 370px);
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #img-mountain1 {
+        top: 0px;
+    }  
+
+    #intro-text {
+        transform: scale(0.8);
+        margin-top: calc(25vw - 390px);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #img-sky {
+        top: 0;
+        left: 0;
+    }
+
+    #img-mountain2 {
+        position: initial;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;        
+    }
+
+    #img-temple {
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    #img-mountain1 {
+        /* background: url("../../vendor/img/intro/taipei_maokong_1.png"); */
+        width: 100%;
+        height: 100%;
+        top: 60px;
+        left: 0px;
+        /* overflow: visible; */
+    }
+
+    #intro-text {
+        transform: scale(0.75);
+        margin-left: -10%;
+        margin-top: calc(25vw - 300px);
+    }
+}
+
+@media screen and (max-width: 891px) {
+    #intro-text {
+        transform: scale(0.7);
+        margin-top: -80px;
+    }
+
+    #learn-more {
+        transform: scale(0.8);
+    }
+
+    #learn-more:hover {
+        transform: scale(0.84);
+    }
+}
+
+@media screen and (max-width: 416px) {
+    #intro-text {
+        transform: scale(0.6);
+        margin-top: -120px;
+    }
+
+    #learn-more {
+        transform: scale(0.7);
+    }
+
+    #learn-more:hover {
+        transform: scale(0.74);
+    }
+}
