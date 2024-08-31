@@ -92,10 +92,40 @@ div.bg-layer {
     width: auto;
 }
 
+#projects-gh-btn {
+    display: flex;
+    width: 100%;
+    min-height: 87px;
+    height: fit-content;
+    gap: 15px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    justify-content: center;
+    background-color: #56B265;
+    transition: all 0.3s ease-in-out;
+    pointer-events: all;
+}
+
+#projects-gh-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+#projects-gh-btn span {
+    font: normal 700 18px/27px var(--body-font-family);
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+}
+
+#projects-gh-btn:hover {
+    background-color: #369d47;
+}
+
 @media screen and (max-width: 1280px) {
     .section-wrapper {
         margin-left: 95px;
         margin-right: 95px;
+        /* margin-bottom: calc((0.9 - 1) * 100%); */
     }
 
     .section-content {
@@ -107,6 +137,10 @@ div.bg-layer {
     .section-content {
         transform: scale(0.85);
     }
+
+    .section-wrapper {
+        /* margin-bottom: calc((0.85 - 1) * 100%); */
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -117,6 +151,7 @@ div.bg-layer {
     .section-wrapper {
         margin-left: 65px;
         margin-right: 65px;
+        /* margin-bottom: calc((0.825 - 1) * 100%); */
     }  
 }
 
@@ -124,6 +159,7 @@ div.bg-layer {
     .section-wrapper {
         margin-left: 0px;
         margin-right: 0px;
+        /* margin-bottom: calc((0.75 - 1) * 100%); */
     }  
 
     .section-content {
@@ -136,6 +172,7 @@ div.bg-layer {
         padding-top: 0px;
         margin-left: -50px;
         margin-right: -50px;
+        /* margin-bottom: calc((0.6 - 1) * 100%); */
     }  
 
     .section-content {

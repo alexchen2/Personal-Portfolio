@@ -47,7 +47,7 @@
 
 #about-sheading {
     font: var(--about-sheading-font);
-    max-width: 500px;
+    max-width: 550px;
     width: auto;
 }
 
@@ -122,6 +122,7 @@
         margin-bottom: 100px;
         display: flex;
         justify-content: center;
+        flex: none;
     }
 }
 

@@ -3,21 +3,23 @@
         "name": "Gamified Learning Platform",
         "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
         "tags": [
-            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Docker", "Figma"
+            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Jinja", "Docker", "Figma"
         ],
         "githubRepo": "https://github.com/alexchen2/Gamified-Learning-Platform",
         "demoLink": null,
-        "previewImgPath": null
+        "figmaLink": "https://www.figma.com/design/dNc00yiRD6x9sAsZkrjECs/Gamified-Revamp-Designs?node-id=305-50&t=0dW2sRvicOwwUuI0-1",
+        "previewImgPath": "../img/projects/preview_gamified.png"
     },
     {
         "name": "My Personal Website - this page!",
         "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
         "tags": [
-            "HTML", "CSS", "Javascript", "React.js", "Node.js", "Bootstrap", "React Spring", "Figma"
+            "HTML", "CSS", "Javascript", "React.js", "Node.js", "React Spring", "Figma"
         ],
-        "githubRepo": "https://github.com/alexchen2/Gamified-Learning-Platform",
+        "githubRepo": "https://github.com/alexchen2/Personal-Portfolio",
         "demoLink": null,
-        "previewImgPath": null
+        "figmaLink": "https://www.figma.com/design/CuXFrhKlq1dPRa9zrhDRBp/Personal-Website-Design?node-id=0-1&t=GskFDNqHxAplzkXO-1",
+        "previewImgPath": "../img/projects/preview_personal_website.png"
     },
     {
         "name": "Bus Buddy: Route Optimizer",
@@ -27,16 +29,18 @@
         ],
         "githubRepo": "https://github.com/alexchen2/BusBuddy-Route-Optimizer",
         "demoLink": null,
-        "previewImgPath": null
+        "figmaLink": "https://www.figma.com/design/FQglb2Xdd4QrC9fKvL9kKi/Bus-Buddy-(Design-by-Maggie-Lu)?node-id=0-1&t=JdYK2vwxzndw6wfJ-1",
+        "previewImgPath": "../img/projects/preview_bus_buddy.png"
     },
     {
         "name": "ChordGuru - Chord Recombinator",
         "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
         "tags": [
-            "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Docker"
+            "Node.js", "Express.js", "Python", "HTML", "CSS", "Javascript"
         ],
         "githubRepo": "https://github.com/alexchen2/Chord-Recombinator-Web",
         "demoLink": "https://chordguru.glitch.me",
-        "previewImgPath": null
+        "figmaLink": "https://www.figma.com/design/MMoHDbYhvfSOvL0AXeLBor/Chord-Recombinator-Design?node-id=0-1&t=uY1dLE1ihnm6Ebcn-1",
+        "previewImgPath": "../img/projects/preview_chord_recombinator.png"
     }
 ]

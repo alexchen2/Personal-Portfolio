@@ -37,7 +37,7 @@ function Intro({ parallax, children }) {
                 </MouseParallaxChild>
             ),
             mountain2: (
-                <MouseParallaxChild factorX={0.05} factorY={0.1}>
+                <MouseParallaxChild factorX={0.05} factorY={0.05}>
                     <div className="animation-layer parallax" id="img-mountain2" />
                 </MouseParallaxChild> 
             ),

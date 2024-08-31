@@ -31,7 +31,7 @@ function About({ parallax }) {
                                 Hey, I’m Alex.
                             </span>
                             <span id="about-sheading">
-                                I’m a detail-oriented software engineer focused on ... something something.
+                                I’m a detail-oriented software developer dedicated to crafting immersive experiences.
                             </span>
                         </div>
                         <div id="about-body">

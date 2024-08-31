@@ -42,6 +42,11 @@ nav.nav-header {
     text-shadow: var(--heading-shadow);
 }
 
+.navbar-brand a {
+    text-decoration: none;
+    color: white;
+}
+
 .header-text {
     display: flex;
     justify-content: center;
@@ -204,6 +209,20 @@ nav.nav-header {
 }
 
 @media screen and (max-width: 991px) {
+    .header-text.container {
+        padding: 0;
+    }
+
+    .nav-link.header-link {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .nav-link.header-link:hover {
+        transform: none;
+        background-color: rgb(75, 75, 75);
+    }
+
     .nav-desktop {
         display: none;
     }

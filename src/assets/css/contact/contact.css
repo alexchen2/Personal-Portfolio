@@ -1,0 +1,49 @@
+:root {
+    --contact-mheading-font: normal 400 45px/54px var(--heading-font-family);
+    --contact-sheading-font: normal 400 32px/38px var(--heading-font-family);
+}
+
+#contact-background {
+    min-height: 556px;
+    height: fit-content;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    pointer-events: all;
+}
+
+#contact-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 18px;
+}
+
+#contact-mheading {
+    font: var(--contact-mheading-font);
+    color: var(--text-color);
+    text-shadow: var(--heading-shadow);
+    letter-spacing: 0.01em;
+}
+
+#contact-sheading {
+    letter-spacing: 0.01em;
+    font: var(--contact-sheading-font);
+    color: var(--text-color);
+    text-shadow: var(--heading-shadow);
+}
+
+#contact-heading::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -28px;
+    border-top: 3px solid var(--line-color);
+    width: 141px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+#contact-email-btn {
+    margin-top: 73px;
+}

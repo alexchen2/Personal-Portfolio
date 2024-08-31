@@ -1,14 +1,16 @@
 import "../../assets/css/ui/primaryBtn.css"
 
 function PrimaryBtn( { text, link, iconPath } ) {
+    let btnImg = <></>;
+
+    if (iconPath != null) {
+        btnImg = <img className="btn-icon" src={iconPath} alt="" />
+    }  
+
     return(
-        <a href={ link }>
+        <a href={ link } className="btn-link">
             <div className="btn-wrapper">
-                <img 
-                    className="btn-icon"
-                    src={iconPath} 
-                    alt="" 
-                />
+                { btnImg }
                 <span className="btn-text">{ text }</span>
             </div>
         </a>

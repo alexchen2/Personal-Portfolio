@@ -37,7 +37,7 @@
     width: 100%; /* 1600px; */
     height: 100%; /* 1066px; */
     left: -30px;
-    top: 0;
+    top: 0px;
     background-position: center top; 
     background-repeat: no-repeat; 
     background-size: cover;
@@ -51,7 +51,7 @@
     width: 100%;  /* 1501px */
     height: 100%; /* 999px; */
     left: 10px;
-    top: 0px;
+    top: -20px;
     background-position: center top; 
     background-repeat: no-repeat; 
     background-size: cover;
@@ -65,7 +65,7 @@
     width: 105%; /* 1548px */
     height: 100%; /* 1031px */
     left: -40px;
-    top: 10px;
+    top: -20px;
     background-position: center top; 
     background-repeat: no-repeat; 
     background-size: cover;
