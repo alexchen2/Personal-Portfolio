@@ -20,9 +20,9 @@ function AboutImage({ parallax }) {
     )
 }
 
-function About({ parallax }) {
+function About({ innerRef, parallax }) {
     return(
-        <div id="about-background">
+        <div ref={innerRef} id="about-background">
             <Container className="section-wrapper" id="about-wrapper">
                 <Row>
                     <Col lg="7" className="section-content" id="about-text">

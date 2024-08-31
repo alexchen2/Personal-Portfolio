@@ -8,23 +8,23 @@ import "../../assets/css/skills/skills.css";
 import skillsData from "../../data/skills.json";
 import SkillIcon from "./SkillIcon";
 
-function Skills({ parallax }) {
+function Skills({ innerRef, parallax }) {
     const techSkills = skillsData["technologies"];
     const toolSkills = skillsData["otherTools"];
     const libSkills = skillsData["libFrameworks"];
 
-    const techIcons = techSkills.map((skill) => {
-        return <SkillIcon name={skill.name} imgPath={skill.imgPath} />
+    const techIcons = techSkills.map((skill, index) => {
+        return <SkillIcon key={index} name={skill.name} imgPath={skill.imgPath} />
     });
-    const toolIcons = toolSkills.map((skill) => {
-        return <SkillIcon name={skill.name} imgPath={skill.imgPath} />
+    const toolIcons = toolSkills.map((skill, index) => {
+        return <SkillIcon key={index} name={skill.name} imgPath={skill.imgPath} />
     });
-    const libIcons = libSkills.map((skill) => {
-        return <SkillIcon name={skill.name} imgPath={skill.imgPath} />
+    const libIcons = libSkills.map((skill, index) => {
+        return <SkillIcon key={index} name={skill.name} imgPath={skill.imgPath} />
     });
 
     return(
-        <div id="skills-background">
+        <div ref={innerRef} id="skills-background">
             <Container className="section-wrapper section-content" id="skills-wrapper">
                 <Row className="">
                     <div id="skills-heading">

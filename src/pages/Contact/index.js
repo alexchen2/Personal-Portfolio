@@ -2,9 +2,9 @@ import { Container } from "react-bootstrap";
 import PrimaryBtn from "../../components/ui/PrimaryBtn";
 import "../../assets/css/contact/contact.css";
 
-function Contact({ parallax }) {
+function Contact({ innerRef, parallax }) {
     return (
-        <div id="contact-background">
+        <div ref={innerRef} id="contact-background">
             <Container className="section-wrapper section-content" id="contact-wrapper">
                 <div id="contact-heading">
                     <span id="contact-mheading">

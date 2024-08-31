@@ -16,16 +16,24 @@ import Header from "./components/nav/Header";
 import Footer from "./components/nav/Footer";
 import useParallaxScroll from './hooks/useParallaxScroll';
 import Skills from './pages/Skills';
-import { config } from 'react-spring';
 import SkillsBG from "./assets/vendor/img/skills/desk-3.png";
 import ContactBG from "./assets/vendor/img/contact/jiufen-temple.png";
 import Projects from './pages/Projects';
 import GoToBtn from './assets/vendor/img/projects/go-to.png';
 import Contact from './pages/Contact';
+import useOffsetTop from './hooks/useOffsetTop';
+import useScreenSize from './hooks/useScreenSize';
 
 function App() {
+    // Hooks
     const parallax = useParallaxScroll();
+    const [aboutRef, aboutOffsetTop] = useOffsetTop();
+    const [skillsRef, skillsOffsetTop] = useOffsetTop();
+    const [projectsRef, projectsOffsetTop] = useOffsetTop();
+    const [contactRef, contactOffsetTop] = useOffsetTop();
+    const screenSize = useScreenSize();
 
+    // Other variables
     const sectionAnchors = {
         about: 0.65,
         skills: 1.24,
@@ -66,16 +74,16 @@ function App() {
                         God damn it React.
                     */}
                     <Intro parallax={parallax}>
-                        <About parallax={parallax} />
-                        <Skills parallax={parallax} />
-                        <Projects parallax={parallax} />
+                        <About innerRef={aboutRef} parallax={parallax} />
+                        <Skills innerRef={skillsRef} parallax={parallax} />
+                        <Projects innerRef={projectsRef} parallax={parallax} />
                         <a href='https://github.com/alexchen2'>
                             <div id="projects-gh-btn">
                                 <img src={GoToBtn} alt="" />
                                 <span>CHECK OUT MORE PROJECTS</span>
                             </div>
                         </a>
-                        <Contact parallax={parallax} />
+                        <Contact innerRef={contactRef} parallax={parallax} />
                     </Intro>
                 </MouseParallaxContainer>
 

@@ -19,7 +19,7 @@ function ProjectSkillTag({ skillName }) {
 }
 
 function ProjectCapsule({ projectData }) {
-    const skillTags = projectData["tags"].map((skillName) => <ProjectSkillTag skillName={skillName} />);
+    const skillTags = projectData["tags"].map((skillName, index) => <ProjectSkillTag key={index} skillName={skillName} />);
     let goToBtn = <></>;
 
     if (projectData["demoLink"] != null) {
@@ -59,13 +59,13 @@ function ProjectCapsule({ projectData }) {
     )
 }
 
-function Projects({ parallax }) {
-    const projectCapsules = projectsData.map((projectData) => {
-        return <ProjectCapsule projectData={projectData} />
+function Projects({ innerRef, parallax }) {
+    const projectCapsules = projectsData.map((projectData, index) => {
+        return <ProjectCapsule key={index} projectData={projectData} />
     })
 
     return(
-        <div id="projects-background">
+        <div ref={innerRef} id="projects-background">
             <Container className="section-wrapper section-content" id="projects-wrapper">
                 <div id="projects-heading">
                     <span>Featured Projects</span>
