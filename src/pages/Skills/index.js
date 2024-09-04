@@ -7,8 +7,12 @@ import Row from "react-bootstrap/esm/Row";
 import "../../assets/css/skills/skills.css";
 import skillsData from "../../data/skills.json";
 import SkillIcon from "./SkillIcon";
+import HeightRefContext from "../../hooks/HeightRefContext";
+import { useContext } from "react";
 
-function Skills({ innerRef, parallax }) {
+function Skills({ parallax }) {
+    const setSkillsRef = useContext(HeightRefContext)["skills"];
+
     const techSkills = skillsData["technologies"];
     const toolSkills = skillsData["otherTools"];
     const libSkills = skillsData["libFrameworks"];
@@ -24,7 +28,7 @@ function Skills({ innerRef, parallax }) {
     });
 
     return(
-        <div ref={innerRef} id="skills-background">
+        <div ref={newRef => {setSkillsRef(newRef)}} id="skills-background">
             <Container className="section-wrapper section-content" id="skills-wrapper">
                 <Row className="">
                     <div id="skills-heading">

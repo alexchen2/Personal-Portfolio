@@ -5,7 +5,11 @@ import Col from "react-bootstrap/Col";
 
 // local imports
 import "../../assets/css/about/about.css"
-import SelfPortrait from "../../assets/vendor/img/intro/portrait_1.png";
+import SelfPortrait from "../../assets/vendor/img/intro/portrait_2.jpg";
+import { useCallback, useLayoutEffect, useEffect, useRef, useState, useContext } from "react";
+import useResizeObserver from "@react-hook/resize-observer";
+import useElemHeight from "../../hooks/useElemHeight";
+import HeightRefContext from "../../hooks/HeightRefContext";
 
 function AboutImage({ parallax }) {
     if (parallax.current.current) {
@@ -20,9 +24,11 @@ function AboutImage({ parallax }) {
     )
 }
 
-function About({ innerRef, parallax }) {
-    return(
-        <div ref={innerRef} id="about-background">
+function About({ parallax }) {
+    const setAboutRef = useContext(HeightRefContext)["about"];
+
+    return( 
+        <div ref={newRef => {setAboutRef(newRef)}} id="about-background">
             <Container className="section-wrapper" id="about-wrapper">
                 <Row>
                     <Col lg="7" className="section-content" id="about-text">

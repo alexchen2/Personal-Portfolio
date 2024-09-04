@@ -7,14 +7,18 @@ export default function useScreenSize() {
         height: window.innerHeight,
     });
 
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
+    function handleResize() {
+        console.log({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+        setScreenSize({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+    }
 
+    useEffect(() => {
         window.addEventListener('resize', handleResize);
 
         // Clean up the event listener when the component unmounts

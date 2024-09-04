@@ -9,8 +9,12 @@ import IntroHeading from "./IntroHeading";
 
 // File imports
 import ArrowDown from "../../assets/vendor/img/intro/arrow-down.png";
+import { useContext } from "react";
+import HeightRefContext from "../../hooks/HeightRefContext";
 
 function Intro({ parallax, children }) {
+    const setIntroRef = useContext(HeightRefContext)["intro"];
+
     // TODO: Use useEffect for dynamic breakpoints, such that headings 
     // adjust offset on diff screen sizes
     const isMobile = useMediaQuery({ query: '(max-width: 991px)' });
@@ -25,7 +29,7 @@ function Intro({ parallax, children }) {
             <div className="animation-layer parallax" id="img-temple" />
         ),
         mountain1: (
-            <div className="animation-layer parallax" id="img-mountain1" />
+            <div ref={setIntroRef} className="animation-layer parallax" id="img-mountain1" />
         )
     };
 
@@ -48,7 +52,7 @@ function Intro({ parallax, children }) {
             ),
             mountain1: (
                 <MouseParallaxChild factorX={0.4} factorY={0.3}>
-                    <div className="animation-layer parallax" id="img-mountain1" />
+                    <div ref={setIntroRef} className="animation-layer parallax" id="img-mountain1" />
                 </MouseParallaxChild>
             )
         }

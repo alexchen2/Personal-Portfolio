@@ -1,10 +1,14 @@
 import { Container } from "react-bootstrap";
 import PrimaryBtn from "../../components/ui/PrimaryBtn";
 import "../../assets/css/contact/contact.css";
+import { useContext } from "react";
+import HeightRefContext from "../../hooks/HeightRefContext";
 
-function Contact({ innerRef, parallax }) {
+function Contact({ parallax }) {
+    const setContactRef = useContext(HeightRefContext)["contact"];
+
     return (
-        <div ref={innerRef} id="contact-background">
+        <div ref={newRef => {setContactRef(newRef)}} id="contact-background">
             <Container className="section-wrapper section-content" id="contact-wrapper">
                 <div id="contact-heading">
                     <span id="contact-mheading">

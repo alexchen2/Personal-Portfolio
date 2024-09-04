@@ -9,6 +9,8 @@ import GithubIcon from "../../assets/vendor/img/skills/github.png";
 import GoToIcon from "../../assets/vendor/img/projects/go-to.png";
 import FigmaIcon from "../../assets/vendor/img/skills/figma.png";
 import projectsData from "../../data/projects.json";
+import { useContext } from "react";
+import HeightRefContext from "../../hooks/HeightRefContext";
 
 function ProjectSkillTag({ skillName }) {
     return(
@@ -59,13 +61,15 @@ function ProjectCapsule({ projectData }) {
     )
 }
 
-function Projects({ innerRef, parallax }) {
+function Projects({ parallax }) {
+    const setProjectsRef = useContext(HeightRefContext)["projects"];
+
     const projectCapsules = projectsData.map((projectData, index) => {
         return <ProjectCapsule key={index} projectData={projectData} />
     })
 
     return(
-        <div ref={innerRef} id="projects-background">
+        <div ref={newRef => { setProjectsRef(newRef) }} id="projects-background">
             <Container className="section-wrapper section-content" id="projects-wrapper">
                 <div id="projects-heading">
                     <span>Featured Projects</span>

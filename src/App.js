@@ -21,31 +21,42 @@ import ContactBG from "./assets/vendor/img/contact/jiufen-temple.png";
 import Projects from './pages/Projects';
 import GoToBtn from './assets/vendor/img/projects/go-to.png';
 import Contact from './pages/Contact';
-import useOffsetTop from './hooks/useOffsetTop';
 import useScreenSize from './hooks/useScreenSize';
+import HeightRefContext from './hooks/HeightRefContext';
+import useElemHeight from './hooks/useElemHeight';
 
 function App() {
-    // Hooks
+    // Hooks and Contexts
     const parallax = useParallaxScroll();
-    const [aboutRef, aboutOffsetTop] = useOffsetTop();
-    const [skillsRef, skillsOffsetTop] = useOffsetTop();
-    const [projectsRef, projectsOffsetTop] = useOffsetTop();
-    const [contactRef, contactOffsetTop] = useOffsetTop();
     const screenSize = useScreenSize();
+    const [introRef, setIntroRef, introHeight] = useElemHeight("#parallax-mountain1");
+    const [aboutRef, setAboutRef, aboutHeight] = useElemHeight("#about-background");
+    const [skillsRef, setSkillsRef, skillsHeight] = useElemHeight("#skills-background");
+    const [projectsRef, setProjectsRef, projectsHeight] = useElemHeight("#projects-background");
+    const [contactRef, setContactRef, contactHeight] = useElemHeight("#contact-background");
+    
+    const refFuncObj = {
+        intro: setIntroRef,
+        about: setAboutRef,
+        skills: setSkillsRef,
+        projects: setProjectsRef,
+        contact: setContactRef
+    };
+    const scrollRate = 0.625;
 
-    // Other variables
+    // Custom object storing variable heights of all page sections, dependent on current device height and dynamic prior section heights
     const sectionAnchors = {
-        about: 0.65,
-        skills: 1.24,
-        projects: 1.9,
-        contact: 3.9
+        about: ((introHeight / screenSize["height"]) * scrollRate),  // 0.65
+        skills: (((introHeight + aboutHeight) / screenSize["height"]) * scrollRate),
+        projects: (((introHeight + aboutHeight + skillsHeight) / screenSize["height"]) * scrollRate),
+        contact: (((introHeight + aboutHeight + skillsHeight + projectsHeight) / screenSize["height"]) * scrollRate)
     }
 
     return (
-        <>
+        <HeightRefContext.Provider value={refFuncObj}>
             <Header isMobile={true} parallax={parallax} sectionAnchors={sectionAnchors} />
             <Parallax
-                pages={4.75}
+                pages={4.75}   // This little motherfucker of an issue is giving me an assfucking right now
                 ref={parallax}
                 className="animation"
                 
@@ -74,16 +85,16 @@ function App() {
                         God damn it React.
                     */}
                     <Intro parallax={parallax}>
-                        <About innerRef={aboutRef} parallax={parallax} />
-                        <Skills innerRef={skillsRef} parallax={parallax} />
-                        <Projects innerRef={projectsRef} parallax={parallax} />
+                        <About parallax={parallax} />
+                        <Skills parallax={parallax} />
+                        <Projects parallax={parallax} />
                         <a href='https://github.com/alexchen2'>
                             <div id="projects-gh-btn">
                                 <img src={GoToBtn} alt="" />
                                 <span>CHECK OUT MORE PROJECTS</span>
                             </div>
                         </a>
-                        <Contact innerRef={contactRef} parallax={parallax} />
+                        <Contact parallax={parallax} />
                     </Intro>
                 </MouseParallaxContainer>
 
@@ -114,7 +125,7 @@ function App() {
                 </ParallaxLayer>
             </Parallax>
             <Footer />
-        </>
+        </HeightRefContext.Provider>
     );
 }
 
