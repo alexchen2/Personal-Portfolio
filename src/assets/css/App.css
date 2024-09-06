@@ -115,6 +115,7 @@ div.bg-layer {
     font: normal 700 18px/27px var(--body-font-family);
     letter-spacing: 0.02em;
     color: var(--text-color);
+    text-align: center;
 }
 
 #projects-gh-btn:hover {
@@ -165,6 +166,23 @@ div.bg-layer {
     .section-content {
         transform: scale(0.75);
     }
+
+    #projects-gh-btn {
+        min-height: 56px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    #projects-gh-btn img {
+        width: 20px;
+        height: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    #projects-gh-btn span {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -177,5 +195,23 @@ div.bg-layer {
 
     .section-content {
         transform: scale(0.6);
+    }
+
+    #projects-gh-btn {
+        min-height: 50px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        gap: 10px;
+    }
+
+    #projects-gh-btn img {
+        width: 16px;
+        height: 16px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    #projects-gh-btn span {
+        font-size: 12px;
     }
 }

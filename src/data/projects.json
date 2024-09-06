@@ -12,7 +12,7 @@
     },
     {
         "name": "My Personal Website - this page!",
-        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "description": "I created this website from scratch over the summer of 2024 to knock down two birds with one stone—not only did I finally have a way to showcase my projects and skills all in one place, but I was able to get well-acquainted with using React.js for front-end projects.",
         "tags": [
             "HTML", "CSS", "Javascript", "React.js", "Node.js", "React Spring", "Figma"
         ],
@@ -23,23 +23,29 @@
     },
     {
         "name": "Bus Buddy: Route Optimizer",
-        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "description": "Bus Buddy was a web prototype that intended to give more students access to efficient school transportation. By using clustering and depth-first search algorithms, the app would formulate optimal bus stop locations within school zones and map the most fuel-efficient paths for bus drivers to follow. I built the project with three others during the hackathon Deltahacks X; we won 1st place for 'Best DEI (Diversity, Equity, & Inclusion) Hack'!",
         "tags": [
             "Flask", "Python", "HTML", "CSS", "Javascript", "SQL", "Jinja", "Figma"
         ],
         "githubRepo": "https://github.com/alexchen2/BusBuddy-Route-Optimizer",
-        "demoLink": null,
+        "demoLink": [
+            "Devpost", 
+            "https://devpost.com/software/bus-buddy-rj03hs"
+        ],
         "figmaLink": "https://www.figma.com/design/FQglb2Xdd4QrC9fKvL9kKi/Bus-Buddy-(Design-by-Maggie-Lu)?node-id=0-1&t=JdYK2vwxzndw6wfJ-1",
         "previewImgPath": "../img/projects/preview_bus_buddy.png"
     },
     {
         "name": "ChordGuru - Chord Recombinator",
-        "description": "Developed as a member of Google Developer Student Clubs McMaster’s open-source team, this web app aims to tackle students’ distracted learning and low engagement rates by adding interactive game-like elements to online education modules (such as leaderboards and point-redemption systems).",
+        "description": "ChordGuru is a web app that identifies music chords from a given group of notes, using principles from music set theory. It aspires to help students learning music theory or composers experimenting with note combinations, and supports a variety of input methods for ease of use towards all types of musicians (such as a virtual piano, microphone, and a music staff builder).",
         "tags": [
             "Node.js", "Express.js", "Python", "HTML", "CSS", "Javascript"
         ],
         "githubRepo": "https://github.com/alexchen2/Chord-Recombinator-Web",
-        "demoLink": "https://chordguru.glitch.me",
+        "demoLink": [
+            "Try it Out!", 
+            "https://chordguru.glitch.me"
+        ],
         "figmaLink": "https://www.figma.com/design/MMoHDbYhvfSOvL0AXeLBor/Chord-Recombinator-Design?node-id=0-1&t=uY1dLE1ihnm6Ebcn-1",
         "previewImgPath": "../img/projects/preview_chord_recombinator.png"
     }

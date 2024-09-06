@@ -25,7 +25,7 @@ function ProjectCapsule({ projectData }) {
     let goToBtn = <></>;
 
     if (projectData["demoLink"] != null) {
-        goToBtn = <PrimaryBtn text={"Try it Out!"} link={projectData["demoLink"]} iconPath={GoToIcon} />
+        goToBtn = <PrimaryBtn text={projectData["demoLink"][0]} link={projectData["demoLink"][1]} iconPath={GoToIcon} />
     }
     return (
         <div className="pcapsule-box">

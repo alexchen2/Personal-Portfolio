@@ -24,6 +24,7 @@ import Contact from './pages/Contact';
 import useScreenSize from './hooks/useScreenSize';
 import HeightRefContext from './hooks/HeightRefContext';
 import useElemHeight from './hooks/useElemHeight';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 function App() {
     // Hooks and Contexts
@@ -35,6 +36,11 @@ function App() {
     const [projectsRef, setProjectsRef, projectsHeight] = useElemHeight("#projects-background");
     const [contactRef, setContactRef, contactHeight] = useElemHeight("#contact-background");
     
+    const [loading, setLoading] = useState(false);
+    const [totalPages, setTotalPages] = useState();
+    const [skillsBGEnd, setSkillsBGEnd] = useState(3);
+    const [contactBGPlace, setContactBGPlace] = useState({start: 3, end: 4});
+
     const refFuncObj = {
         intro: setIntroRef,
         about: setAboutRef,
@@ -43,6 +49,7 @@ function App() {
         contact: setContactRef
     };
     const scrollRate = 0.625;
+    const heightRate = 0.7;
 
     // Custom object storing variable heights of all page sections, dependent on current device height and dynamic prior section heights
     const sectionAnchors = {
@@ -52,11 +59,21 @@ function App() {
         contact: (((introHeight + aboutHeight + skillsHeight + projectsHeight) / screenSize["height"]) * scrollRate)
     }
 
+    // const totalPages = (introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]
+
+    console.log(`Total page height: ${totalPages}`);
+
+    useLayoutEffect(() => {
+        // setLoading(false)
+        setTotalPages(((introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]) * heightRate);
+        // Debug later
+    }, [introHeight, aboutHeight, skillsHeight, projectsHeight, contactHeight, screenSize])
+
     return (
         <HeightRefContext.Provider value={refFuncObj}>
             <Header isMobile={true} parallax={parallax} sectionAnchors={sectionAnchors} />
             <Parallax
-                pages={4.75}   // This little motherfucker of an issue is giving me an assfucking right now
+                pages={totalPages}   // TODO: This little motherfucker of an issue is giving me an assfucking right now
                 ref={parallax}
                 className="animation"
                 
@@ -103,7 +120,7 @@ function App() {
                     className="bg-layer" 
                     offset={1} 
                     speed={-1} 
-                    sticky={{start: 0, end: 3}} 
+                    sticky={{start: 0, end: skillsBGEnd }} 
                     style={{
                         zIndex: -9999,
                         backgroundImage: `url(${SkillsBG})`
@@ -115,7 +132,7 @@ function App() {
                     className="bg-layer" 
                     offset={1} 
                     speed={-1} 
-                    sticky={{start: 3, end: 4}} 
+                    sticky={{start: contactBGPlace["start"], end: contactBGPlace["end"]}} 
                     style={{
                         zIndex: -9999,
                         backgroundImage: `url(${ContactBG})`
