@@ -6,7 +6,7 @@ export default function useParallaxScroll() {
 
     function handleScroll() {
         if (parallax.current) {
-            console.log(parallax.current);
+            console.log(parallax.current.current);
         }
     }
 

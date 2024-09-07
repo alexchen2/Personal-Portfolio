@@ -10,7 +10,7 @@ import GoToIcon from "../../assets/vendor/img/projects/go-to.png";
 import FigmaIcon from "../../assets/vendor/img/skills/figma.png";
 import projectsData from "../../data/projects.json";
 import { useContext } from "react";
-import HeightRefContext from "../../hooks/HeightRefContext";
+import { HeightRefContext } from "../../hooks/Contexts";
 
 function ProjectSkillTag({ skillName }) {
     return(
@@ -61,7 +61,7 @@ function ProjectCapsule({ projectData }) {
     )
 }
 
-function Projects({ parallax }) {
+function Projects() {
     const setProjectsRef = useContext(HeightRefContext)["projects"];
 
     const projectCapsules = projectsData.map((projectData, index) => {

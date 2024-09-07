@@ -6,10 +6,13 @@ import Navbar from "react-bootstrap/Navbar";
 
 // Local imports
 import "../../assets/css/nav/header.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ParallaxContext } from "../../hooks/Contexts";
 // import useScreenSize from "../../hooks/useScreenSize";
 
-function Header({ isMobile, parallax, sectionAnchors }) {
+function Header({ isMobile, sectionAnchors }) {
+    const parallax = useContext(ParallaxContext);
+    
     const [expanded, setExpanded] = useState(false);
     // Determines what header styling config to show (fixed mobile vs normal desktop)
     let navClass = "nav-desktop";

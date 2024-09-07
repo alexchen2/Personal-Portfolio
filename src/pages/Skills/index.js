@@ -7,10 +7,10 @@ import Row from "react-bootstrap/esm/Row";
 import "../../assets/css/skills/skills.css";
 import skillsData from "../../data/skills.json";
 import SkillIcon from "./SkillIcon";
-import HeightRefContext from "../../hooks/HeightRefContext";
+import { HeightRefContext } from "../../hooks/Contexts";
 import { useContext } from "react";
 
-function Skills({ parallax }) {
+function Skills() {
     const setSkillsRef = useContext(HeightRefContext)["skills"];
 
     const techSkills = skillsData["technologies"];

@@ -9,9 +9,11 @@ import SelfPortrait from "../../assets/vendor/img/intro/portrait_2.jpg";
 import { useCallback, useLayoutEffect, useEffect, useRef, useState, useContext } from "react";
 import useResizeObserver from "@react-hook/resize-observer";
 import useElemHeight from "../../hooks/useElemHeight";
-import HeightRefContext from "../../hooks/HeightRefContext";
+import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
 
-function AboutImage({ parallax }) {
+function AboutImage() {
+    const parallax = useContext(ParallaxContext);
+    
     if (parallax.current.current) {
         // TODO: activate hover animation once scrolled into view, and replace
         //       hover psuedo-tag with proper class tag
@@ -24,7 +26,7 @@ function AboutImage({ parallax }) {
     )
 }
 
-function About({ parallax }) {
+function About() {
     const setAboutRef = useContext(HeightRefContext)["about"];
 
     return( 
@@ -47,7 +49,7 @@ function About({ parallax }) {
                         </div>
                     </Col>
                     <Col className="section-content" id="about-image">
-                        <AboutImage parallax={parallax}/>
+                        <AboutImage />
                     </Col>
                 </Row>
             </Container>

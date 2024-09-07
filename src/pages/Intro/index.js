@@ -10,9 +10,10 @@ import IntroHeading from "./IntroHeading";
 // File imports
 import ArrowDown from "../../assets/vendor/img/intro/arrow-down.png";
 import { useContext } from "react";
-import HeightRefContext from "../../hooks/HeightRefContext";
+import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
 
-function Intro({ parallax, children }) {
+function Intro({ children }) {
+    const parallax = useContext(ParallaxContext);
     const setIntroRef = useContext(HeightRefContext)["intro"];
 
     // TODO: Use useEffect for dynamic breakpoints, such that headings 

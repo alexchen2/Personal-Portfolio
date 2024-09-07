@@ -22,9 +22,10 @@ import Projects from './pages/Projects';
 import GoToBtn from './assets/vendor/img/projects/go-to.png';
 import Contact from './pages/Contact';
 import useScreenSize from './hooks/useScreenSize';
-import HeightRefContext from './hooks/HeightRefContext';
+import {HeightRefContext, ParallaxContext} from './hooks/Contexts';
 import useElemHeight from './hooks/useElemHeight';
 import { useEffect, useLayoutEffect, useState } from 'react';
+import VertScrollMenu from './components/nav/VertScrollMenu';
 
 function App() {
     // Hooks and Contexts
@@ -56,12 +57,21 @@ function App() {
         about: ((introHeight / screenSize["height"]) * scrollRate),  // 0.65
         skills: (((introHeight + aboutHeight) / screenSize["height"]) * scrollRate),
         projects: (((introHeight + aboutHeight + skillsHeight) / screenSize["height"]) * scrollRate),
-        contact: (((introHeight + aboutHeight + skillsHeight + projectsHeight) / screenSize["height"]) * scrollRate)
-    }
+        contact: (((introHeight + aboutHeight + skillsHeight + projectsHeight) / screenSize["height"]) * scrollRate),
+    };
+
+    const sectionHeights = {
+        intro: 0,
+        about: introHeight,  
+        skills: introHeight + aboutHeight,
+        projects: introHeight + aboutHeight + skillsHeight,
+        contact: introHeight + aboutHeight + skillsHeight + projectsHeight - (screenSize["height"] / 2),
+        end: introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight
+    };
 
     // const totalPages = (introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]
-
-    console.log(`Total page height: ${totalPages}`);
+    // console.log(`Total page height: ${totalPages}`);
+    // console.log(`section heights: ${sectionHeights["about"]}`);
 
     useLayoutEffect(() => {
         // setLoading(false)
@@ -71,77 +81,80 @@ function App() {
 
     return (
         <HeightRefContext.Provider value={refFuncObj}>
-            <Header isMobile={true} parallax={parallax} sectionAnchors={sectionAnchors} />
-            <Parallax
-                pages={totalPages}   // TODO: This little motherfucker of an issue is giving me an assfucking right now
-                ref={parallax}
-                className="animation"
-                
-            >
-                {/* Intro & About Sections */}
-                <MouseParallaxContainer 
-                    globalFactorX={0.1} 
-                    globalFactorY={0.1}
-                    containerStyle={{
-                        width: "100%",
-                        height: "100%",
-                        overflow: "visible"
-                    }}
-                    // inverted={true}
-                >
-                    {/* App header for larger, desktop screens */}
-                    <Header isMobile={false} parallax={parallax} sectionAnchors={sectionAnchors} />
+            <ParallaxContext.Provider value={parallax}>
+                <Header isMobile={true} sectionAnchors={sectionAnchors} />
+                <Parallax
+                    pages={totalPages}   // TODO: This little motherfucker of an issue is giving me an assfucking right now
+                    ref={parallax}
+                    className="animation"
                     
-                    {/* 
-                        Parallax is broken in React Spring, so later sections following at the same speed
-                        as the last parallaxLayer in the Intro have to be contained within it, in order to 
-                        prevent issues with responsive web design (smaller screen widths create huge gaps
-                        between sections). As such, later sections are to be passed in Intro as children
-                        to be inserted within the final Intro parallaxLayer.
-
-                        God damn it React.
-                    */}
-                    <Intro parallax={parallax}>
-                        <About parallax={parallax} />
-                        <Skills parallax={parallax} />
-                        <Projects parallax={parallax} />
-                        <a href='https://github.com/alexchen2'>
-                            <div id="projects-gh-btn">
-                                <img src={GoToBtn} alt="" />
-                                <span>CHECK OUT MORE PROJECTS</span>
-                            </div>
-                        </a>
-                        <Contact parallax={parallax} />
-                    </Intro>
-                </MouseParallaxContainer>
-
-                {/* Fixed Skills BG */}
-                <ParallaxLayer 
-                    className="bg-layer" 
-                    offset={1} 
-                    speed={-1} 
-                    sticky={{start: 0, end: skillsBGEnd }} 
-                    style={{
-                        zIndex: -9999,
-                        backgroundImage: `url(${SkillsBG})`
-                    }}
                 >
-                </ParallaxLayer>
-                {/* Fixed Skills BG */}
-                <ParallaxLayer 
-                    className="bg-layer" 
-                    offset={1} 
-                    speed={-1} 
-                    sticky={{start: contactBGPlace["start"], end: contactBGPlace["end"]}} 
-                    style={{
-                        zIndex: -9999,
-                        backgroundImage: `url(${ContactBG})`
-                    }}
-                >
-                        {/* <img src={SkillsBG} alt="" /> */}
-                </ParallaxLayer>
-            </Parallax>
-            <Footer />
+                    {/* Intro & About Sections */}
+                    <MouseParallaxContainer 
+                        globalFactorX={0.1} 
+                        globalFactorY={0.1}
+                        containerStyle={{
+                            width: "100%",
+                            height: "100%",
+                            overflow: "visible"
+                        }}
+                        // inverted={true}
+                    >
+                        {/* App header for larger, desktop screens */}
+                        <Header isMobile={false} sectionAnchors={sectionAnchors} />
+                        
+                        {/* 
+                            Parallax is broken in React Spring, so later sections following at the same speed
+                            as the last parallaxLayer in the Intro have to be contained within it, in order to 
+                            prevent issues with responsive web design (smaller screen widths create huge gaps
+                            between sections). As such, later sections are to be passed in Intro as children
+                            to be inserted within the final Intro parallaxLayer.
+
+                            God damn it React.
+                        */}
+                        <Intro >
+                            <About />
+                            <Skills />
+                            <Projects />
+                            <a href='https://github.com/alexchen2'>
+                                <div id="projects-gh-btn">
+                                    <img src={GoToBtn} alt="" />
+                                    <span>CHECK OUT MORE PROJECTS</span>
+                                </div>
+                            </a>
+                            <Contact />
+                        </Intro>
+                    </MouseParallaxContainer>
+
+                    {/* Fixed Skills BG */}
+                    <ParallaxLayer 
+                        className="bg-layer" 
+                        offset={1} 
+                        speed={-1} 
+                        sticky={{start: 0, end: skillsBGEnd }} 
+                        style={{
+                            zIndex: -9999,
+                            backgroundImage: `url(${SkillsBG})`
+                        }}
+                    >
+                    </ParallaxLayer>
+                    {/* Fixed Skills BG */}
+                    <ParallaxLayer 
+                        className="bg-layer" 
+                        offset={1} 
+                        speed={-1} 
+                        sticky={{start: contactBGPlace["start"], end: contactBGPlace["end"]}} 
+                        style={{
+                            zIndex: -9999,
+                            backgroundImage: `url(${ContactBG})`
+                        }}
+                    >
+                            {/* <img src={SkillsBG} alt="" /> */}
+                    </ParallaxLayer>
+                </Parallax>
+                <VertScrollMenu sectionAnchors={sectionAnchors} sectionHeights={sectionHeights} />
+                <Footer />
+            </ParallaxContext.Provider>
         </HeightRefContext.Provider>
     );
 }
