@@ -31,11 +31,11 @@ function IntroHeading() {
 
     return (
         <Container>
-            <div className="intro-heading">
-                <span className="intro-mheading">
+            <div id="intro-heading">
+                <span id="intro-mheading">
                     Alex Chen
                 </span>
-                <span className="intro-sheading">
+                <span id="intro-sheading">
                     Web developer & ML enthusiast
                 </span>
             </div>
@@ -57,7 +57,7 @@ function IntroHeading() {
                     imgPath={ socialImgPaths["email"] } 
                 />                                
             </div>
-            <div className="intro-resume-btn">
+            <div id="intro-resume-btn">
                 <PrimaryBtn 
                     text={ "Check out my Resume" } 
                     link={ ResumeFile } 

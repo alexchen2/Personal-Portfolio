@@ -98,19 +98,16 @@
     outline: 3px solid #ffffff;
 }
 
-#about-image-panel:hover,
-#about-image-panel:focus {
+#about-image-panel.in-view {
     transform: translate(-12px, -12px);
 }
 
-#about-image-panel:hover::after,
-#about-image-panel:focus::after {
+#about-image-panel.in-view::after {
     left: 12px;
     top: 12px;
 }
 
-#about-image-panel:hover::before,
-#about-image-panel:focus::before {
+#about-image-panel.in-view::before {
     left: 24px;
     top: 24px;
 }

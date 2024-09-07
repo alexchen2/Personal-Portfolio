@@ -16,7 +16,7 @@ function VertScrollButton({ sectionAnchor, startHeight, endHeight, tooltipText }
             && parallax.current.current >= ((startHeight * 0.625) - 50)
         ) {
             setBtnClass("scrollspy-btn in-section");
-            console.log(`VertBTN ${tooltipText}`)
+            // console.log(`VertBTN ${tooltipText}`)
         } else {
             setBtnClass("scrollspy-btn");
         }
@@ -47,10 +47,10 @@ function VertScrollButton({ sectionAnchor, startHeight, endHeight, tooltipText }
 
 function VertScrollMenu({ sectionAnchors, sectionHeights }) {
     const parallax = useContext(ParallaxContext);
-    const [menuHidden, setMenuHidden] = useState("");
+    const [menuHidden, setMenuHidden] = useState("hidden");
 
     function handleMenuVisible() {
-        console.log(`VertMenuTest ${parallax.current.current}, ${sectionHeights["intro"] * 0.625}`)
+        // console.log(`VertMenuTest ${parallax.current.current}, ${sectionHeights["intro"] * 0.625}`)
         if (parallax.current.current < (sectionHeights["about"] * 0.4)) {
             setMenuHidden("hidden");
         } else {

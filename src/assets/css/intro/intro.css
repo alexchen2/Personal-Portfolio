@@ -145,7 +145,7 @@
     width: auto;
 }
 
-.intro-heading {
+#intro-heading {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -153,19 +153,21 @@
     gap: 10px;
 }
 
-.intro-mheading {
+#intro-mheading {
     font: var(--intro-mheading-font);
     color: var(--text-color);
     text-shadow: var(--heading-shadow);
+    animation: fadeUp 0.5s cubic-bezier(.215,.61,.355,1) 1.9s both;
 }
 
-.intro-sheading {
+#intro-sheading {
     font: var(--intro-sheading-font);
     color: var(--text-color);
     text-shadow: var(--heading-shadow);
+    animation: fadeUp 0.5s cubic-bezier(.215,.61,.355,1) 1.9s both;
 }
 
-.intro-heading::after {
+#intro-heading::after {
     position: absolute;
     content: "";
     left: 0;
@@ -174,17 +176,21 @@
     border-top: 3px solid var(--line-color);
     width: 141px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+    animation: lineIn .25s cubic-bezier(.45,.85,.35,.85) 1.3s both;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .socials-row {
     display: flex;
     gap: 22.5px;
     margin-top: 55px;
+    animation: fadeUp 0.5s cubic-bezier(.215,.61,.355,1) 2.4s both;
 }
 
-.intro-resume-btn {
+#intro-resume-btn {
     margin-top: 23px;
     width: fit-content;
+    animation: fadeUp 0.5s cubic-bezier(.215,.61,.355,1) 2.4s both;
 }
 
 @media screen and (max-width: 1350px) {  
@@ -275,3 +281,4 @@
         transform: scale(0.74);
     }
 }
+

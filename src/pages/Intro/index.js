@@ -12,7 +12,7 @@ import ArrowDown from "../../assets/vendor/img/intro/arrow-down.png";
 import { useContext } from "react";
 import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
 
-function Intro({ children }) {
+function Intro({ children, sectionAnchors }) {
     const parallax = useContext(ParallaxContext);
     const setIntroRef = useContext(HeightRefContext)["intro"];
 
@@ -83,7 +83,7 @@ function Intro({ children }) {
                 <button 
                     id="learn-more" 
                     type="button"
-                    onClick={() => parallax.current.scrollTo(0.65)}>
+                    onClick={() => parallax.current.scrollTo(sectionAnchors["about"])}>
                     <span id="learn-text">LEARN MORE</span>
                     <img draggable="false" id="learn-arrow" src={ArrowDown} alt="" />
                 </button>

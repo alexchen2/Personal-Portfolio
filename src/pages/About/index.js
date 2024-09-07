@@ -2,6 +2,7 @@
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useIntersectionObserver } from "@uidotdev/usehooks";
 
 // local imports
 import "../../assets/css/about/about.css"
@@ -13,15 +14,24 @@ import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
 
 function AboutImage() {
     const parallax = useContext(ParallaxContext);
+    const [imgRef, entry] = useIntersectionObserver({
+        threshold: 0.8,
+        root: null,
+        rootMargin: "0px",
+    });    
+    const aboutImgClass = useRef("");
     
-    if (parallax.current.current) {
-        // TODO: activate hover animation once scrolled into view, and replace
-        //       hover psuedo-tag with proper class tag
+    if (entry?.isIntersecting) {
+        aboutImgClass.current = "in-view";
+        console.log("in view");
+    } else {
+        aboutImgClass.current = "";
+        console.log("out of view");
     }
 
     return(
-        <div id="about-image-panel">
-            <img src={SelfPortrait} alt="" />
+        <div id="about-image-panel" className={aboutImgClass.current} >
+            <img src={SelfPortrait} alt="" ref={imgRef}/>
         </div>
     )
 }

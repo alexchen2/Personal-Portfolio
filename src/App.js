@@ -112,7 +112,7 @@ function App() {
 
                             God damn it React.
                         */}
-                        <Intro >
+                        <Intro sectionAnchors={sectionAnchors}>
                             <About />
                             <Skills />
                             <Projects />

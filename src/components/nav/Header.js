@@ -22,7 +22,7 @@ function Header({ isMobile, sectionAnchors }) {
     }
 
     function linkBehavior(linkAnchor) {
-        console.log("Test")
+        // console.log("Test")
         setExpanded(!expanded)
         parallax.current.scrollTo(sectionAnchors[linkAnchor], 0);
     }

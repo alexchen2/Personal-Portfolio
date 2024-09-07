@@ -6,7 +6,7 @@
     margin-bottom: auto;
     top: 0;
     bottom: 0;
-    right: 50px;
+    right: 40px;
 
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 }
 
 #scrollspy-wrapper.hidden {
-    right: 20px;
+    right: 10px;
     opacity: 0;
     visibility: hidden;
     transition: right 0.5s cubic-bezier(.07,.71,.58,.94), opacity 0.3s ease-in-out, visibility 0s 0.3s;
@@ -54,6 +54,7 @@
     user-select: none;
     visibility: visible;
     transition: right 0.3s cubic-bezier(.07,.71,.58,.94), transform 0.25s ease-in-out, 0.3s ease-in-out, visibility 0s 0.3s;
+    pointer-events: none;
 }
 
 .scrollspy-btn:hover {

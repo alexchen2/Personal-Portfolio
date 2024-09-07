@@ -10,9 +10,9 @@ export default function useElemHeight(queryTag) {
         if (elemRef) {
             console.log(`Test: ${typeof(elemRef)}`);
             setElemHeight(elemRef.clientHeight)
-        } else {
-            console.log("Test failed");
-        }
+        } // } else {
+        //     console.log("Test failed");
+        // }
     }, [elemRef]);
 
     // useEffect(() => {
@@ -21,7 +21,7 @@ export default function useElemHeight(queryTag) {
     
     useResizeObserver(elemRef, (entry) => {
         const offset = entry.target.clientHeight;
-        console.log(`${entry.target.id}: ${offset}`)
+        // console.log(`${entry.target.id}: ${offset}`)
         setElemHeight(offset);
     });
 
