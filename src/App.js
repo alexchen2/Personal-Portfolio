@@ -123,6 +123,7 @@ function App() {
                                 </div>
                             </a>
                             <Contact />
+                            <Footer />
                         </Intro>
                     </MouseParallaxContainer>
 
@@ -153,7 +154,6 @@ function App() {
                     </ParallaxLayer>
                 </Parallax>
                 <VertScrollMenu sectionAnchors={sectionAnchors} sectionHeights={sectionHeights} />
-                <Footer />
             </ParallaxContext.Provider>
         </HeightRefContext.Provider>
     );

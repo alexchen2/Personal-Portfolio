@@ -246,6 +246,10 @@ div.bg-layer {
         opacity: 1
     }
 
+    25% {
+        transform: translateX(150%) scaleX(1.5)        
+    }
+
     to {
         opacity: 1;
         transform: none

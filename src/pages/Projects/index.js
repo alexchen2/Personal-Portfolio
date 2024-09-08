@@ -9,7 +9,8 @@ import GithubIcon from "../../assets/vendor/img/skills/github.png";
 import GoToIcon from "../../assets/vendor/img/projects/go-to.png";
 import FigmaIcon from "../../assets/vendor/img/skills/figma.png";
 import projectsData from "../../data/projects.json";
-import { useContext } from "react";
+import { useRef, useContext } from "react";
+import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { HeightRefContext } from "../../hooks/Contexts";
 
 function ProjectSkillTag({ skillName }) {
@@ -21,14 +22,31 @@ function ProjectSkillTag({ skillName }) {
 }
 
 function ProjectCapsule({ projectData }) {
+    const [capsuleRef, entry] = useIntersectionObserver({
+        threshold: 0.75,
+        root: null,
+        rootMargin: "0px",
+    });    
+    const capsuleClass = useRef("pcapsule-box");
     const skillTags = projectData["tags"].map((skillName, index) => <ProjectSkillTag key={index} skillName={skillName} />);
     let goToBtn = <></>;
+    
+    // Detect whether capsule is on screen, then trigger respective animations
+    if (entry?.isIntersecting) {
+        capsuleClass.current = "pcapsule-box in-view";
+        console.log("in view");
+    } else {
+        capsuleClass.current = "pcapsule-box";
+        console.log("out of view");
+    }
 
+    // Adding external link button
     if (projectData["demoLink"] != null) {
         goToBtn = <PrimaryBtn text={projectData["demoLink"][0]} link={projectData["demoLink"][1]} iconPath={GoToIcon} />
     }
+
     return (
-        <div className="pcapsule-box">
+        <div ref={capsuleRef} className={capsuleClass.current}>
             <div className="pcapsule-wrapper">
                 <div className="pcapsule-info">
                     <div className="pcapsule-text">

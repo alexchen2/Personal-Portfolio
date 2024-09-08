@@ -73,7 +73,7 @@ div.col, div.col-xl-6 {
     min-height: 562px;
     height: auto;
 
-    background: #2B2B2B;
+    background: #292929;
     border: 2px solid #FFFFFF;
     border-radius: 15px;
     overflow: hidden;
@@ -233,20 +233,24 @@ div.col, div.col-xl-6 {
 }
 
 /* Capsule Animations & Pseudoelements */
-.pcapsule-box:hover {
-    background-color: #333333;
+.pcapsule-box:hover,
+.pcapsule-box.in-view {
+    background-color: #383838;
 }
 
-.pcapsule-box:hover .pcapsule-img-wrapper {
+.pcapsule-box:hover .pcapsule-img-wrapper,
+.pcapsule-box.in-view .pcapsule-img-wrapper {
     transform: scale(103%) rotate(-5deg);
 
 }
 
-.pcapsule-box:hover #pcapsule-img-bg-1 {
+.pcapsule-box:hover #pcapsule-img-bg-1,
+.pcapsule-box.in-view #pcapsule-img-bg-1 {
     transform: scale(103%) rotate(4deg);
 }
 
-.pcapsule-box:hover #pcapsule-img-bg-2 {
+.pcapsule-box:hover #pcapsule-img-bg-2,
+.pcapsule-box.in-view #pcapsule-img-bg-2 {
     transform: scale(103%) rotate(2deg);
 }
 
