@@ -23,10 +23,8 @@ function AboutImage() {
     
     if (entry?.isIntersecting) {
         aboutImgClass.current = "in-view";
-        console.log("in view");
     } else {
         aboutImgClass.current = "";
-        console.log("out of view");
     }
 
     return(

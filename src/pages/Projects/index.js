@@ -34,10 +34,8 @@ function ProjectCapsule({ projectData }) {
     // Detect whether capsule is on screen, then trigger respective animations
     if (entry?.isIntersecting) {
         capsuleClass.current = "pcapsule-box in-view";
-        console.log("in view");
     } else {
         capsuleClass.current = "pcapsule-box";
-        console.log("out of view");
     }
 
     // Adding external link button
