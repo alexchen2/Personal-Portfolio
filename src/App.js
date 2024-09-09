@@ -75,7 +75,7 @@ function App() {
 
     useLayoutEffect(() => {
         // Set total page height
-        let mobileHeight = (2 - ((screenSize["height"] / 565.5) ** 2)) > 0 ? (2 - ((screenSize["height"] / 565.5) ** 2)) : 0;
+        let mobileHeight = (1 - ((screenSize["height"] / 800) ** 2)) > 0 ? (2 - ((screenSize["height"] / 800) ** 2)) : 0;   // if using "2 - ...", then divide screenSize["height"] by 565.5
         setTotalPages((((introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]) ** 0.823) + (mobileHeight));
         
         // Set sticky page "endpoints" dynamically for Skills and Contact section backgrounds
