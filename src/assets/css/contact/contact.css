@@ -31,6 +31,7 @@
     font: var(--contact-sheading-font);
     color: var(--text-color);
     text-shadow: var(--heading-shadow);
+    line-height: 45px;
 }
 
 #contact-heading::after {
