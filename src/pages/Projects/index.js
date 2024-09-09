@@ -1,6 +1,7 @@
 // Vendor imports
 import Container from "react-bootstrap/esm/Container";
-import { Col, Row } from "react-bootstrap";
+import { useRef, useContext } from "react";
+import { useIntersectionObserver } from "@uidotdev/usehooks";
 
 // Local imports
 import PrimaryBtn from "../../components/ui/PrimaryBtn";
@@ -9,8 +10,7 @@ import GithubIcon from "../../assets/vendor/img/skills/github.png";
 import GoToIcon from "../../assets/vendor/img/projects/go-to.png";
 import FigmaIcon from "../../assets/vendor/img/skills/figma.png";
 import projectsData from "../../data/projects.json";
-import { useRef, useContext } from "react";
-import { useIntersectionObserver } from "@uidotdev/usehooks";
+import useScreenSize from "../../hooks/useScreenSize";
 import { HeightRefContext } from "../../hooks/Contexts";
 
 function ProjectSkillTag({ skillName }) {
@@ -22,15 +22,19 @@ function ProjectSkillTag({ skillName }) {
 }
 
 function ProjectCapsule({ projectData }) {
-    const [capsuleRef, entry] = useIntersectionObserver({
-        threshold: 0.75,
-        root: null,
-        rootMargin: "0px",
-    });    
+    const screenSize = useScreenSize();
     const capsuleClass = useRef("pcapsule-box");
     const skillTags = projectData["tags"].map((skillName, index) => <ProjectSkillTag key={index} skillName={skillName} />);
     let goToBtn = <></>;
     
+    // Set "x" threshold for playing onscreen animations when x% of element is visible in viewport
+    let threshold = screenSize["width"] <= 991 ? 0.6 : 0.75
+    const [capsuleRef, entry] = useIntersectionObserver({
+        threshold: threshold,
+        root: null,
+        rootMargin: "0px",
+    });    
+
     // Detect whether capsule is on screen, then trigger respective animations
     if (entry?.isIntersecting) {
         capsuleClass.current = "pcapsule-box in-view";
