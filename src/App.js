@@ -74,24 +74,25 @@ function App() {
     // console.log(`section heights: ${sectionHeights["about"]}`);
 
     useLayoutEffect(() => {
-        // Set total page height
-        let mobileHeight = (1 - ((screenSize["height"] / 800) ** 2)) > 0 ? (2 - ((screenSize["height"] / 800) ** 2)) : 0;   // if using "2 - ...", then divide screenSize["height"] by 565.5
+        // Set total page height (this is a convoluted mess of a formula... screw you react spring)
+        let mobileHeight = ((800 / (0.00625 * (screenSize["height"] + 5600))) - 20) > 0 ? ((800 / (0.00625 * (screenSize["height"] + 5600))) - 20) : 0;
+        // let mobileHeight = ((800 / (0.025 * (screenSize["height"] + 800))) - 20) > 0 ? ((800 / (0.025 * (screenSize["height"] + 800))) - 20) : 0;   // if using "2 - ...", then divide screenSize["height"] by 565.5
         setTotalPages((((introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]) ** 0.823) + (mobileHeight));
         
         // Set sticky page "endpoints" dynamically for Skills and Contact section backgrounds
         if (skillsBGRef.current) {
             contactBGRef.current.sticky = {
                 start: 0, 
-                end: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2)
+                end: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight * 5)
             };
         }
         
         if (contactBGRef.current) {
             contactBGRef.current.sticky = {
-                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2), 
-                end: 10
+                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2), 
+                end: 1000
             };
-            // alert((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2)
+            alert(((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2))
         }
         // Debug later
     }, [introHeight, aboutHeight, skillsHeight, projectsHeight, contactHeight, screenSize])
