@@ -315,10 +315,6 @@ div.col, div.col-xl-6 {
         margin-bottom: 0;
     }
 
-    .pcapsule-img {
-        /* min-height: 0; */
-    }
-
     .pcapsule-img-wrapper { 
         width: 387px;
         height: 540px;
