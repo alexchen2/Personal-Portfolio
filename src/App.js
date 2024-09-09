@@ -89,8 +89,8 @@ function App() {
         
         if (contactBGRef.current) {
             contactBGRef.current.sticky = {
-                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2), 
-                end: 1000
+                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight), 
+                end: (((introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]) ** 0.823) + (mobileHeight)
             };
             // alert(((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2))
         }
@@ -166,7 +166,7 @@ function App() {
                             speed={-1} 
                             sticky={{start: 3.5, end: 10}} 
                             style={{
-                                zIndex: -9999,
+                                zIndex: -10000,
                                 backgroundImage: `url(${ContactBG})`
                             }}
                         >
