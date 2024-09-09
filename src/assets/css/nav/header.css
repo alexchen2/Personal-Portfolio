@@ -164,7 +164,7 @@ nav.nav-header {
         height: auto;
         min-height: 80px;
         background: none;
-        background-color: rgba(87, 87, 87, 0.95) !important;
+        background-color: rgba(32, 32, 32, 0.75) !important;
         transition: all 0.4s ease-in-out;
     }
 

@@ -7,10 +7,10 @@
     --container-height: 2744px;
 
     --projects-heading-font: normal 400 var(--projects-heading-size)/54px var(--heading-font-family);
-    --pcapsule-heading-font: normal 600 var(--pcapsule-heading-size)/34px var(--body-font-family);
+    --pcapsule-heading-font: normal 600 var(--pcapsule-heading-size)/34px "Inter";
     --pcapsule-body-font: normal 300 var(--pcapsule-body-size)/30px var(--body-font-family);
-    --ptag-text-font: normal 300 var(--ptag-text-size)/30px var(--body-font-family);
-    --pcapsule-btn-font: normal 600 var(--pcapsule-btn-text-size)/23px var(--body-font-family);
+    --ptag-text-font: normal 400 var(--ptag-text-size)/30px var(--body-font-family);
+    --pcapsule-btn-font: normal 500 var(--pcapsule-btn-text-size)/23px var(--body-font-family);
     --projects-vert-padding: 100px;
 }
 
@@ -307,6 +307,10 @@ div.col, div.col-xl-6 {
 }
 
 @media screen and (max-width: 800px) {
+    .pcapsule-heading {
+        font-weight: 500;
+    }
+
     .pcapsule-info {
         transform: scale(0.9);
         margin-right: 20px;

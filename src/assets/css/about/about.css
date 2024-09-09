@@ -91,7 +91,7 @@
     background: black;
     outline: 3px solid #e8e8e8;
     z-index: -1;
-    transition: all 0.4s cubic-bezier(.07,.71,.58,.94) 0.4s;
+    transition: all 0.4s cubic-bezier(.07,.71,.58,.94) 0.2s;
 }
 
 #about-image-panel::after {
@@ -125,13 +125,14 @@
 
 @media screen and (max-width: 600px) {
     #about-image {
+        transform: scale(0.7);
         margin-top: -60px;
     }
 }
 
 @media screen and (max-width: 350px) {
     #about-image {
-        transform: scale(0.75);
+        transform: scale(0.6);
         margin-top: -160px;
         margin-bottom: 50px;
     }
