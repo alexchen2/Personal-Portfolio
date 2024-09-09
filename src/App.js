@@ -81,15 +81,15 @@ function App() {
         
         // Set sticky page "endpoints" dynamically for Skills and Contact section backgrounds
         if (skillsBGRef.current) {
-            contactBGRef.current.sticky = {
+            skillsBGRef.current.sticky = {
                 start: 0, 
-                end: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight * 5)
+                end: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2)
             };
         }
         
         if (contactBGRef.current) {
             contactBGRef.current.sticky = {
-                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight), 
+                start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2), 
                 end: (((introHeight + aboutHeight + skillsHeight + projectsHeight + contactHeight) / screenSize["height"]) ** 0.823) + (mobileHeight)
             };
             // alert(((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2))
