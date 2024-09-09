@@ -92,7 +92,7 @@ function App() {
                 start: ((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2), 
                 end: 1000
             };
-            alert(((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2))
+            // alert(((sectionAnchors["projects"] + sectionAnchors["contact"]) / 2) + (mobileHeight / 2))
         }
         // Debug later
     }, [introHeight, aboutHeight, skillsHeight, projectsHeight, contactHeight, screenSize])

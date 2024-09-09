@@ -9,7 +9,7 @@
     --header-gradient: linear-gradient(360deg, rgba(55, 55, 55, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
     
     --header-link-font: normal 200 18px/27px var(--body-font-family);
-    --header-logo-font: normal 400 24px/36px var(--heading-font-family);
+    --header-logo-font: normal 400 22px/36px var(--heading-font-family);
 
     --heading-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6); 
 }
@@ -162,9 +162,9 @@ nav.nav-header {
         top: 0;
         left: 0;
         height: auto;
-        min-height: 80px;
+        min-height: 60px;
         background: none;
-        background-color: rgba(32, 32, 32, 0.75) !important;
+        background-color: rgba(32, 32, 32, 0.8) !important;
         transition: all 0.4s ease-in-out;
     }
 
@@ -174,8 +174,8 @@ nav.nav-header {
 
     .header-top-wrapper {
         display: flex;
-        margin-top: 17px;
-        margin-bottom: 17px;
+        margin-top: 12.8px;
+        margin-bottom: 12.8px;
     }
 
     .header-text {
@@ -193,7 +193,7 @@ nav.nav-header {
         width: 100%;
         text-align: left !important;
         text-transform: capitalize;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 400;
     }
 }
