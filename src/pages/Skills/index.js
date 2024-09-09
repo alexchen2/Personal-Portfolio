@@ -7,16 +7,19 @@ import Row from "react-bootstrap/esm/Row";
 import "../../assets/css/skills/skills.css";
 import skillsData from "../../data/skills.json";
 import SkillIcon from "./SkillIcon";
-import { HeightRefContext } from "../../hooks/Contexts";
+import { HeightRefContext } from "../../context/Contexts";
 import { useContext } from "react";
 
 function Skills() {
+    // Get "ref" to attach to skills section for tracking element height
     const setSkillsRef = useContext(HeightRefContext)["skills"];
 
+    // Read data from skills JSON
     const techSkills = skillsData["technologies"];
     const toolSkills = skillsData["otherTools"];
     const libSkills = skillsData["libFrameworks"];
 
+    // Map data to skill icon components
     const techIcons = techSkills.map((skill, index) => {
         return <SkillIcon key={index} name={skill.name} imgPath={skill.imgPath} />
     });

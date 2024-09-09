@@ -1,3 +1,4 @@
+// Footer.js - Footer element at the bottom of the page
 import "../../assets/css/nav/footer.css"
 
 function Footer() {

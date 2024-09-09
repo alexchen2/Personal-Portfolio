@@ -1,18 +1,21 @@
+// Header.js - Header element at the top of the page
+
 // Vendor imports
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { useEffect, useRef } from "react";
 
 // Local imports
 import "../../assets/css/nav/header.css";
 import { useContext, useState } from "react";
-import { ParallaxContext } from "../../hooks/Contexts";
+import { ParallaxContext } from "../../context/Contexts";
 // import useScreenSize from "../../hooks/useScreenSize";
 
 function Header({ isMobile, sectionAnchors }) {
+    // Get data on parallax container
     const parallax = useContext(ParallaxContext);
     
+    // useState for manually toggling navbar collapsing mechanism
     const [expanded, setExpanded] = useState(false);
     // Determines what header styling config to show (fixed mobile vs normal desktop)
     let navClass = "nav-desktop";
@@ -21,6 +24,7 @@ function Header({ isMobile, sectionAnchors }) {
         navClass = "nav-mobile";
     }
 
+    // Behaviour for when a navlink is clicked in mobile view
     function linkBehavior(linkAnchor) {
         // console.log("Test")
         setExpanded(!expanded)

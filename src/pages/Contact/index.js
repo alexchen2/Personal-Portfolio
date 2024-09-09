@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import PrimaryBtn from "../../components/ui/PrimaryBtn";
 import "../../assets/css/contact/contact.css";
 import { useContext } from "react";
-import { HeightRefContext } from "../../hooks/Contexts";
+import { HeightRefContext } from "../../context/Contexts";
 
 function Contact() {
     const setContactRef = useContext(HeightRefContext)["contact"];

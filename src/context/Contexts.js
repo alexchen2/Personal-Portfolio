@@ -1,3 +1,4 @@
+// Stores contexts used within the app
 import { createContext } from "react";
 
 const HeightRefContext = createContext(null);

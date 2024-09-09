@@ -1,19 +1,17 @@
 // Vendor imports
+import { useRef, useContext } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 
-// local imports
+// Local/File imports
 import "../../assets/css/about/about.css"
+import { HeightRefContext } from "../../context/Contexts";
 import SelfPortrait from "../../assets/vendor/img/intro/portrait_2.jpg";
-import { useCallback, useLayoutEffect, useEffect, useRef, useState, useContext } from "react";
-import useResizeObserver from "@react-hook/resize-observer";
-import useElemHeight from "../../hooks/useElemHeight";
-import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
 
+// Portrait image component in about section
 function AboutImage() {
-    const parallax = useContext(ParallaxContext);
     const [imgRef, entry] = useIntersectionObserver({
         threshold: 0.8,
         root: null,

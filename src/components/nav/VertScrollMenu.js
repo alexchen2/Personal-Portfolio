@@ -1,15 +1,18 @@
-// TODO
-import useParallaxScroll from "../../hooks/useParallaxScroll";
+// VertScrollMenu.js - fixed right-side scrollspy menu for navigation (only appears in desktop view >991px)
+
+// Vendor imports
 import { useContext, useEffect, useState } from "react";
-import { ParallaxContext } from "../../hooks/Contexts";
-import useScreenSize from "../../hooks/useScreenSize";
 
+// Local imports
 import "../../assets/css/nav/vertScrollMenu.css";
+import { ParallaxContext } from "../../context/Contexts";
 
+// Individual circular button within vertical menu
 function VertScrollButton({ sectionAnchor, startHeight, endHeight, tooltipText }) {
     const parallax = useContext(ParallaxContext);
     const [btnClass, setBtnClass] = useState("scrollspy-btn");
 
+    // Detects when viewport is in button's respective section, and changes button visually to show (fade to green)
     function handleVertScroll() {
         if (
             parallax.current.current < ((endHeight * 0.625) - 50)
@@ -22,8 +25,9 @@ function VertScrollButton({ sectionAnchor, startHeight, endHeight, tooltipText }
         }
     }
 
+    // Add detection function to button via scroll event listeners
     useEffect(() => {
-        if (parallax.current != undefined) {
+        if (parallax.current !== undefined) {
             const container = parallax.current.container.current;
             container.addEventListener("scroll", handleVertScroll)
 
@@ -45,10 +49,12 @@ function VertScrollButton({ sectionAnchor, startHeight, endHeight, tooltipText }
     )
 }
 
+// Outer container for scrollspy menu buttons
 function VertScrollMenu({ sectionAnchors, sectionHeights }) {
     const parallax = useContext(ParallaxContext);
     const [menuHidden, setMenuHidden] = useState("hidden");
 
+    // Handles visibility of menu when viewport is in the intro section (hidden there, and visible everywhere elsewhere)
     function handleMenuVisible() {
         // console.log(`VertMenuTest ${parallax.current.current}, ${sectionHeights["intro"] * 0.625}`)
         if (parallax.current.current < (sectionHeights["about"] * 0.4)) {
@@ -58,8 +64,9 @@ function VertScrollMenu({ sectionAnchors, sectionHeights }) {
         }
     }
 
+    // Attach visibility function above to menu via a scroll event listener
     useEffect(() => {
-        if (parallax.current != undefined) {
+        if (parallax.current !== undefined) {
             const container = parallax.current.container.current;
             container.addEventListener("scroll", handleMenuVisible)
             

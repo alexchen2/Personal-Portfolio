@@ -3,7 +3,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 import "../../assets/css/skills/skillIcon.css";
 
-// Tooltip code taken from "https://mui.com/material-ui/react-tooltip/"
+// Tooltip code taken from "https://mui.com/material-ui/react-tooltip/"; adds bootstrap-like tooltip on hover/focus
 const BootstrapTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(({ theme }) => ({

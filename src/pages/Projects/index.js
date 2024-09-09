@@ -11,8 +11,9 @@ import GoToIcon from "../../assets/vendor/img/projects/go-to.png";
 import FigmaIcon from "../../assets/vendor/img/skills/figma.png";
 import projectsData from "../../data/projects.json";
 import useScreenSize from "../../hooks/useScreenSize";
-import { HeightRefContext } from "../../hooks/Contexts";
+import { HeightRefContext } from "../../context/Contexts";
 
+// Skill tag components in a project capsule
 function ProjectSkillTag({ skillName }) {
     return(
         <div className="ptag-box">
@@ -21,6 +22,7 @@ function ProjectSkillTag({ skillName }) {
     )
 }
 
+// Component for an individual project capsule, storing info on a project
 function ProjectCapsule({ projectData }) {
     const screenSize = useScreenSize();
     const capsuleClass = useRef("pcapsule-box");
@@ -81,6 +83,7 @@ function ProjectCapsule({ projectData }) {
     )
 }
 
+// Entire project section
 function Projects() {
     const setProjectsRef = useContext(HeightRefContext)["projects"];
 

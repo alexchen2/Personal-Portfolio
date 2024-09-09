@@ -10,15 +10,15 @@ import IntroHeading from "./IntroHeading";
 // File imports
 import ArrowDown from "../../assets/vendor/img/intro/arrow-down.png";
 import { useContext } from "react";
-import { HeightRefContext, ParallaxContext } from "../../hooks/Contexts";
+import { HeightRefContext, ParallaxContext } from "../../context/Contexts";
 
 function Intro({ children, sectionAnchors }) {
     const parallax = useContext(ParallaxContext);
     const setIntroRef = useContext(HeightRefContext)["intro"];
 
-    // TODO: Use useEffect for dynamic breakpoints, such that headings 
-    // adjust offset on diff screen sizes
+    // Returns a bool for whether the current viewport is <991px or not
     const isMobile = useMediaQuery({ query: '(max-width: 991px)' });
+    // Parallax layer content without mouse parallax (mobile view)
     let mouseParallaxLayers = {
         sky: (
             <div className="animation-layer parallax" id="img-sky" />
@@ -34,6 +34,7 @@ function Intro({ children, sectionAnchors }) {
         )
     };
 
+    // If in desktop viewport size, insert mouse parallax components into parallax layers
     if (!isMobile) {
         mouseParallaxLayers = {
             sky: (
@@ -58,9 +59,6 @@ function Intro({ children, sectionAnchors }) {
             )
         }
     }
-
-    // Set up custom hook for scrolling to elements
-    // const {scrollTo} = useScrollTo(config.slow)
 
     return (
         <>

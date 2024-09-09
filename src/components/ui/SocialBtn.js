@@ -1,3 +1,4 @@
+// SocialBtn.js - component for circular social media buttons
 import "./../../assets/css/ui/socialBtn.css";
 
 function SocialBtn({ link, imgPath }) {
