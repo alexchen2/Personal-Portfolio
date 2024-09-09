@@ -5,7 +5,7 @@ function Footer() {
         <footer id="footer-background">
             <div id="footer-wrapper">
                 <span id="footer-credits">
-                    © Alex Chen 2024 | Designed & Developed by Myself
+                    © Alex Chen {(new Date().getFullYear())} | Designed & Developed by Myself
                 </span>
             </div>
         </footer>
