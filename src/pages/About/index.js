@@ -51,7 +51,7 @@ function About() {
                         <div id="about-body">
                             I’m currently a third-year student at McMaster University in Ontario, pursuing a computer science major with a minor in mathematics. Over the past three years, I’ve immersed myself into web development, creating numerous responsive dynamic webpages. As such, I’m experienced with both front and back-end development, having worked with popular frameworks and libraries like Flask, React, and Express.js. I’ve also taken an interest in machine learning recently.<br /> <br />
 
-                            When I’m not engrossed in my IDE, you can usually find me binging the latest seasonal anime, traveling around Taiwan, or grinding online races in Mario Kart 8 Deluxe.
+                            When I’m not engrossed in my IDE, you can usually find me binging the latest seasonal anime, visiting family in Taiwan, or grinding online races in Mario Kart 8 Deluxe.
                         </div>
                     </Col>
                     <Col className="section-content" id="about-image">
