@@ -67,6 +67,10 @@
         {
             "name": "SQLAlchemy",
             "imgPath": "../img/skills/sqlalchemy.png"
+        },
+		{
+            "name": "Tailwind CSS",
+            "imgPath": "../img/skills/tailwind.png"
         }
     ]
 }
